@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YAKCP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <main>
+        <h1>Yet Another Kindle Clippings Parser 📖</h1>
+        <p>Load your "My Clippings.txt" file to clean and format your highlights.</p>
+
+        <label for="clippingsFile" class="file-label">
+            1. Choose "My Clippings.txt" file
+        </label>
+        <input type="file" id="clippingsFile" accept=".txt">
+
+        <div id="status"></div>
+
+        <h2>2. Your Formatted Highlights</h2>
+        <div id="html-output" class="output-container">
+            <p class="placeholder">Your highlights will appear here...</p>
+        </div>
+
+        <h2>3. Export (Markdown)</h2>
+        <p>You can copy-paste this text into your notes app (Obsidian, Notion, etc.)</p>
+        <textarea id="output" readonly placeholder="The Markdown format will appear here..."></textarea>
+    </main>
+
+    <script src="parser.js"></script>
+</body>
+
+</html>

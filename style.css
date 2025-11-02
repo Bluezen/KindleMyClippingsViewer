@@ -1,0 +1,189 @@
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+main {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+h1,
+h2 {
+    color: #1a1a1a;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+}
+
+h1 {
+    font-size: 2em;
+}
+
+h2 {
+    font-size: 1.5em;
+    margin-top: 30px;
+}
+
+p {
+    font-size: 1.1em;
+}
+
+/* Style for the file upload button */
+.file-label {
+    display: inline-block;
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.file-label:hover {
+    background-color: #0056b3;
+}
+
+/* Hide the default ugly input */
+input[type="file"] {
+    display: none;
+}
+
+/* Status Area */
+#status {
+    font-weight: bold;
+    margin: 20px 0;
+    font-size: 1.1em;
+}
+
+/* Dynamic HTML output container */
+.output-container {
+    width: 100%;
+    min-height: 50px;
+    /* Moins de hauteur min, car tout est caché */
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    /* Moins de padding */
+    background-color: #fafafa;
+}
+
+.output-container .placeholder {
+    color: #888;
+    font-style: italic;
+    padding: 10px;
+}
+
+/* Conteneur pour CHAQUE livre (titre + liste) */
+.book-container {
+    border-bottom: 1px solid #eee;
+}
+
+.book-container:last-child {
+    border-bottom: none;
+}
+
+/* L'en-tête cliquable du livre */
+.book-header {
+    padding: 15px 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.book-header:hover {
+    background-color: #f0f0f0;
+}
+
+/* Ajout d'un indicateur (flèche) */
+.book-header::after {
+    content: '▼';
+    /* Flèche vers le bas */
+    font-size: 0.8em;
+    color: #888;
+    transition: transform 0.2s ease;
+}
+
+/* Quand le livre est "actif" (cliqué), on tourne la flèche */
+.book-header.active::after {
+    transform: rotate(180deg);
+    /* Flèche vers le haut */
+}
+
+/* Titre du livre (ajusté) */
+.book-title {
+    font-size: 1.4em;
+    color: #1a1a1a;
+    margin: 0;
+    /* Plus de marges */
+}
+
+/* Auteur du livre (ajusté) */
+.book-author {
+    font-size: 1.1em;
+    color: #555;
+    margin: 5px 0 0 0;
+    /* Plus de marges */
+    font-weight: normal;
+    font-style: italic;
+}
+
+/* La liste des surlignages (cachée par défaut) */
+.clippings-list {
+    display: none;
+    /* MAGIE : Caché par défaut */
+    padding: 15px 20px 20px 20px;
+    background-color: #ffffff;
+    border-top: 1px dashed #ddd;
+}
+
+/* Style pour chaque citation */
+.clipping-quote {
+    font-size: 1.1em;
+    border-left: 4px solid #007bff;
+    padding-left: 15px;
+    margin-left: 10px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.clipping-quote:last-child {
+    margin-bottom: 0;
+}
+
+.clipping-quote p {
+    margin: 0;
+}
+
+.clipping-quote small {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #777;
+    font-style: italic;
+}
+
+/* Markdown output area */
+#output {
+    width: 100%;
+    height: 500px;
+    box-sizing: border-box;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 0.95em;
+    background-color: #fafafa;
+    line-height: 1.5;
+}
